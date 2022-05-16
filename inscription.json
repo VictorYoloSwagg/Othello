@@ -1,6 +1,6 @@
 {
     "request": "subscribe",
-    "port": 7000,
+    "port": 7900,
     "name": "Mario et Luigi",
     "matricules": ["195300", "195242"]
  }
