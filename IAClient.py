@@ -51,6 +51,6 @@ def server():
                 print(message)
 
 
-print("go")                     
+print("connecté")                     
 if __name__ == "__main__":
     inscription()
