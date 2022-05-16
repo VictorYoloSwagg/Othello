@@ -1,6 +1,7 @@
 # Projet-Othello
 Repository dédié au projet d'informatique Othello 2022
 195242, 195300
+
 Pour lancer une partie, il faut écrire dans le terminal du dossier P12CCHAMPIONSHIPRUNNER-MAIN la commande : python server.py othello
 
 Pour se connecter au serveur afin de jouer, on lance notre fichier IACLIENT.py 
