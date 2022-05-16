@@ -6,10 +6,10 @@ from Strategy import possibleMoves, myMove
 
 ipserver="localhost"
 port=3000
-hisserverAddress=(ipserver,port)      
+prof=(ipserver,port)      
 monip='0.0.0.0'
 monport=7900
-myserveraddress=(monip,monport)    
+moi=(monip,monport)    
 pong={"response": "pong"}
 ping={"request": "ping"}
 
@@ -18,13 +18,13 @@ def inscription():
     with open ("inscription.json","r") as file:   
         data=file.read()                                           
     with socket.socket() as s:     
-        s.connect(hisserverAddress)
+        s.connect(prof)
         s.send(data.encode())  
         server()
 
 def server():                                                      
     with socket.socket() as s:                                     
-        s.bind(myserveraddress)                                    
+        s.bind(moi)                                    
         s.listen() 
         while True:
             jeu, address=s.accept()
