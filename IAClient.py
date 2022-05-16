@@ -6,25 +6,25 @@ from Strategy import possibleMoves, myMove
 
 ipserver="localhost"
 port=3000
-hisserverAddress=(ipserver,port)      #adresse de l'hôte du serveur
+hisserverAddress=(ipserver,port)      
 monip='0.0.0.0'
-monport=7000
+monport=7900
 myserveraddress=(monip,monport)    
 pong={"response": "pong"}
 ping={"request": "ping"}
 
 #LANCEMENT
-def inscription():                                                 #fonction de depart qui se connecte au serveur de jeu et s'inscript
+def inscription():                                                
     with open ("inscription.json","r") as file:   
-        data=file.read()                                           #contient les donnée d'inscription
+        data=file.read()                                           
     with socket.socket() as s:     
         s.connect(hisserverAddress)
         s.send(data.encode())  
         server()
 
-def server():                                                      #fonction qui tourne en boucle
-    with socket.socket() as s:                                     #renvoie pong quand reçoit ping
-        s.bind(myserveraddress)                                    #renvoie un coup quand on lui en demande un
+def server():                                                      
+    with socket.socket() as s:                                     
+        s.bind(myserveraddress)                                    
         s.listen() 
         while True:
             jeu, address=s.accept()
@@ -51,6 +51,6 @@ def server():                                                      #fonction qui
                 print(message)
 
 
-print("c'est parti !")                     
+print("go")                     
 if __name__ == "__main__":
     inscription()
